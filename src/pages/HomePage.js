@@ -36,10 +36,6 @@ const HomePage = ({ onLoginClick }) => {
         </div>
         <div className="hero-content">
           <div className="hero-text">
-            <div className="hero-badge">
-              <span className="hero-badge-dot" />
-              Powered by Artificial Intelligence
-            </div>
             <h1 className="hero-title">
               <span className="hero-title-gradient">AI Powered</span>
               <br />Student Assistant
@@ -81,15 +77,6 @@ const HomePage = ({ onLoginClick }) => {
               <div className="hero-circle-main">
                 <div className="hero-circle-inner">🤖</div>
               </div>
-              <div className="hero-floating-card hero-floating-card-1">
-                <span>📋</span> Exam Schedules
-              </div>
-              <div className="hero-floating-card hero-floating-card-2">
-                <span>🎓</span> Admission Info
-              </div>
-              <div className="hero-floating-card hero-floating-card-3">
-                <span>📊</span> Results Ready
-              </div>
             </div>
           </div>
         </div>
@@ -124,8 +111,6 @@ const HomePage = ({ onLoginClick }) => {
 
             <div className="about-visual fade-in-up">
               <div className="about-image-wrap">🎓</div>
-              <div className="about-badge about-badge-1">🤖 AI Powered</div>
-              <div className="about-badge about-badge-2">⚡ Instant Answers</div>
             </div>
           </div>
         </div>
@@ -167,10 +152,9 @@ const HomePage = ({ onLoginClick }) => {
           <div className="contact-grid">
             <div className="contact-info">
               {[
-                { icon: "📧", label: "Email", value: "info@dte.edu.in" },
-                { icon: "📞", label: "Phone", value: "+91 98765 43210" },
+                { icon: "📧", label: "Email", value: "admin@gmail.com" },
+                { icon: "📞", label: "Phone", value: "+91 90806 78110" },
                 { icon: "📍", label: "Address", value: "Department of Technical Education, State Headquarters" },
-                { icon: "🕐", label: "Office Hours", value: "Mon – Fri, 9:00 AM – 5:00 PM" },
               ].map((item, i) => (
                 <div className="contact-info-card fade-in-up" key={i} style={{ transitionDelay: `${i * 80}ms` }}>
                   <div className="contact-info-icon">{item.icon}</div>

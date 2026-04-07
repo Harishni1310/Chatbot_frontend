@@ -527,6 +527,14 @@ const Chatbot = ({ onLogout, isGuest = false, userId = null }) => {
         {/* Input area */}
         <div className="chat-input-area">
           <div className="chat-input-wrap">
+            <button
+              className={`voice-btn ${listening ? "listening" : ""}`}
+              onClick={toggleVoice}
+              title={listening ? "Stop listening" : "Voice input"}
+              type="button"
+            >
+              {listening ? "🔴" : "🎙️"}
+            </button>
             <textarea
               className="chat-input"
               placeholder={listening ? "🎙️ Listening... speak now" : "Ask about exams, syllabus, results, admissions..."}
@@ -540,14 +548,6 @@ const Chatbot = ({ onLogout, isGuest = false, userId = null }) => {
               <span className={`char-counter ${charCount > charLimit * 0.85 ? "warn" : ""}`}>
                 {charCount}/{charLimit}
               </span>
-              <button
-                className={`voice-btn ${listening ? "listening" : ""}`}
-                onClick={toggleVoice}
-                title={listening ? "Stop listening" : "Voice input"}
-                type="button"
-              >
-                {listening ? "🔴" : "🎙️"}
-              </button>
               <button
                 className={`chat-send-btn ${loading ? "sending" : ""}`}
                 onClick={() => handleSend()}

@@ -36,8 +36,8 @@ const Footer = ({ onLoginClick }) => {
 
           <div>
             <p className="footer-title">Contact</p>
-            <div className="footer-contact-item">📧 info@dte.edu.in</div>
-            <div className="footer-contact-item">📞 +91 98765 43210</div>
+            <div className="footer-contact-item">📧 admin@gmail.com</div>
+            <div className="footer-contact-item">📞 +91 90806 78110</div>
             <div className="footer-contact-item">📍 Department of Technical Education</div>
           </div>
         </div>

@@ -24,9 +24,16 @@ const LoginPage = ({ onViewHome, onGoSignup }) => {
     setLoading(true);
     try {
       const data = await loginUser(form.email, form.password);
-      setUser(data.data); // { id, name, email, role }
+      setUser(data.data);
     } catch (err) {
-      setError(err.message || "Login failed. Please try again.");
+      const msg = err.message || "";
+      if (msg.toLowerCase().includes("not found")) {
+        setError("No account found with this email. Please sign up first.");
+      } else if (msg.toLowerCase().includes("invalid password")) {
+        setError("Incorrect password. Please try again.");
+      } else {
+        setError("Login failed. Please check your credentials.");
+      }
     } finally {
       setLoading(false);
     }
@@ -59,7 +66,20 @@ const LoginPage = ({ onViewHome, onGoSignup }) => {
           <p className="login-subtitle">Sign in to your AI Student Assistant</p>
         </div>
 
-        {error && <div className="login-error">⚠️ {error}</div>}
+        {error && (
+          <div className="login-error">
+            ⚠️ {error}
+            {error.includes("sign up") && (
+              <button
+                className="login-signup-link"
+                style={{ display: "block", marginTop: "0.5rem", color: "#f0c040" }}
+                onClick={onGoSignup}
+              >
+                → Create an account now
+              </button>
+            )}
+          </div>
+        )}
 
         <form className="login-form" onSubmit={handleLogin}>
           <div className="form-group">
